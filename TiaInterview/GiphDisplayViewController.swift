@@ -33,6 +33,8 @@ class GiphDisplayViewController: UIViewController, UICollectionViewDelegate, UIC
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "gif", for: indexPath) as! GifCollectionViewCell
         let gif = AllGifs[indexPath.row]
         
+        let gifRect = CGRect(x: CGFloat(0.0), y: CGFloat(0.0), width: CGFloat(gif.width), height: CGFloat(gif.height))
+        cell.bounds = gifRect
         cell.gif?.getGifFrom(url: gif.image_url)
         return cell
     }
