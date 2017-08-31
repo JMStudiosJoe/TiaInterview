@@ -1,0 +1,22 @@
+//
+//  GiphyGif.swift
+//  TiaInterview
+//
+//  Created by Joseph Richardson on 8/31/17.
+//  Copyright © 2017 Joseph Richardson. All rights reserved.
+//
+
+import Foundation
+
+class GiphyGif {
+    
+    var image_url: String = ""
+    var width: Int = 0
+    var height: Int = 0
+    
+    init( url: String, width: Int, height: Int) {
+        self.image_url = url
+        self.height = height
+        self.width = width
+    }
+}
