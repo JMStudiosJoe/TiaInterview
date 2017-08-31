@@ -7,12 +7,14 @@
 //
 
 import Foundation
+import UIKit
 
 class GiphyGif {
     
     var image_url: String = ""
     var width: Int = 0
     var height: Int = 0
+    var image: UIImage?
     
     init( url: String, width: Int, height: Int) {
         self.image_url = url

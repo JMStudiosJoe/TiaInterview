@@ -35,7 +35,8 @@ class GiphDisplayViewController: UIViewController, UICollectionViewDelegate, UIC
         
         let gifRect = CGRect(x: CGFloat(0.0), y: CGFloat(0.0), width: CGFloat(gif.width), height: CGFloat(gif.height))
         cell.bounds = gifRect
-        cell.gif?.getGifFrom(url: gif.image_url)
+        cell.gif?.getGifFrom(gif)
+        
         return cell
     }
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
