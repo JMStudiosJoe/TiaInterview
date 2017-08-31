@@ -15,7 +15,6 @@ extension UIImageView {
     func getGifFrom(url: String) {
         
         Alamofire.request(url).responseData { response in
-            
             let image = UIImage.gif(data: response.data!)
             self.image = image
         }

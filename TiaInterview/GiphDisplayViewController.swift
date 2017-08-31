@@ -16,11 +16,6 @@ class GiphDisplayViewController: UIViewController, UICollectionViewDelegate, UIC
         nc.addObserver(forName:Notification.Name(rawValue:"loadedData"),
                        object:nil, queue:nil,
                        using:reloadGifData)
-        
-        
-        
-        
-        // Do any additional setup after loading the view.
     }
     
     func reloadGifData(notification:Notification) {
@@ -33,8 +28,6 @@ class GiphDisplayViewController: UIViewController, UICollectionViewDelegate, UIC
         
         return AllGifs.count
     }
-    
-    //MARK:Display Provider CollectionView cells
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell
     {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "gif", for: indexPath) as! GifCollectionViewCell
@@ -42,6 +35,14 @@ class GiphDisplayViewController: UIViewController, UICollectionViewDelegate, UIC
         
         cell.gif?.getGifFrom(url: gif.image_url)
         return cell
+    }
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        
+        let bottomEdge:CGFloat = scrollView.contentOffset.y + scrollView.frame.size.height
+        
+        if bottomEdge >= scrollView.contentSize.height {
+            fetchGifsFromGiphy(howMany: 4)
+        }
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
