@@ -7,3 +7,11 @@
 //
 
 
+import Alamofire
+
+
+let giphyURL: String = "https://api.giphy.com/v1/gifs/random?api_key=9d7dbfe707004b9798b7815c5642d002"
+func getGifsFromGiphy() {
+    
+    
+}
