@@ -10,7 +10,6 @@
 import Alamofire
 import SwiftGifOrigin
 
-
 extension UIImageView {
     func getGifFrom(_ gif: GiphyGif) {
         if let image = gif.image {
