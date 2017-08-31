@@ -6,27 +6,18 @@
 //  Copyright © 2017 Joseph Richardson. All rights reserved.
 //
 
-import Foundation
+
 import Alamofire
+import SwiftGifOrigin
 
 
 extension UIImageView {
-    func getImageFromUrl(url: URL, completion: @escaping (_ data: Data?, _  response: URLResponse?, _ error: Error?) -> Void) {
+    func getGifFrom(url: String) {
         
-        Alamofire.request(url).responseJSON { response in
-            if let jsonResult = response.result.value as? Dictionary<String, Any> {
-                print(jsonResult)
-                //make uiimage from data
-                //set image to new image
-            }
-            else {
-                print("ERROR GETTING IMAGE directly")
-            }
+        Alamofire.request(url).responseData { response in
+            
+            let image = UIImage.gif(data: response.data!)
+            self.image = image
         }
-        
-        URLSession.shared.dataTask(with: url) {
-            (data, response, error) in
-            completion(data, response, error)
-            }.resume()
     }
 }

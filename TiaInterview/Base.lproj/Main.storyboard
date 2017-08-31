@@ -59,14 +59,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="163" height="176"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="thE-Rn-S1Z">
-                                                    <rect key="frame" x="60" y="147" width="42" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="tb1-fe-cjn">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="defaultGifImage" translatesAutoresizingMaskIntoConstraints="NO" id="tb1-fe-cjn">
                                                     <rect key="frame" x="5" y="10" width="153" height="146"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="153" id="1L2-Qu-LBv"/>
@@ -118,4 +111,7 @@
             <point key="canvasLocation" x="140" y="196.55172413793105"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="defaultGifImage" width="300" height="100"/>
+    </resources>
 </document>

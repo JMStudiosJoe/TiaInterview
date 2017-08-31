@@ -17,7 +17,7 @@ class GiphDisplayViewController: UIViewController, UICollectionViewDelegate, UIC
                        object:nil, queue:nil,
                        using:reloadGifData)
         
-        getGifsFromGiphy()
+        
         
         
         // Do any additional setup after loading the view.
@@ -39,7 +39,8 @@ class GiphDisplayViewController: UIViewController, UICollectionViewDelegate, UIC
     {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "gif", for: indexPath) as! GifCollectionViewCell
         let gif = AllGifs[indexPath.row]
-        cell.gif.image = UIImage(contentsOfFile: gif.image_url)
+        
+        cell.gif?.getGifFrom(url: gif.image_url)
         return cell
     }
     override func didReceiveMemoryWarning() {
